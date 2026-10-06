@@ -27,8 +27,8 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str = "localhost"
     POSTGRES_PORT: str = "5432"
 
-    GROQ_API_KEY:str
-    GITHUB_TOKEN:str
+    GROQ_API_KEY: str = ""
+    GITHUB_TOKEN: str = ""
 
     model_config=SettingsConfigDict(
         env_file=".env",
