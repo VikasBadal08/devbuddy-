@@ -10,3 +10,4 @@ tree-sitter-python
 sentence-transformers
 pytest
 httpx
+alembic
