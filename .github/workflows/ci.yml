@@ -54,6 +54,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Enable pgvector extension
+        run: |
+          PGPASSWORD=devbuddy_password psql \
+            -h localhost \
+            -U devbuddy \
+            -d devbuddy \
+            -c "CREATE EXTENSION IF NOT EXISTS vector;"
+
       - name: Run database migrations
         run: |
             python -m alembic upgrade head
